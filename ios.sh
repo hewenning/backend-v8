@@ -28,6 +28,8 @@ gclient sync
 echo "=====[ add ArrayBuffer_New_Without_Stl ]====="
 node $GITHUB_WORKSPACE/node-script/add_arraybuffer_new_without_stl.js .
 
+node $GITHUB_WORKSPACE/node-script/patchs.js .
+
 echo "=====[ Building V8 ]====="
 python ./tools/dev/v8gen.py arm64.release -vv -- '
 v8_use_external_startup_data = true
